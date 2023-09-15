@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/giritara/static/css/main.43aba0db.css",
+    "main.js": "/giritara/static/js/main.3277bced.js",
+    "static/js/787.8a220983.chunk.js": "/giritara/static/js/787.8a220983.chunk.js",
+    "index.html": "/giritara/index.html",
+    "main.43aba0db.css.map": "/giritara/static/css/main.43aba0db.css.map",
+    "main.3277bced.js.map": "/giritara/static/js/main.3277bced.js.map",
+    "787.8a220983.chunk.js.map": "/giritara/static/js/787.8a220983.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.43aba0db.css",
+    "static/js/main.3277bced.js"
+  ]
+}
