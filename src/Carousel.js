@@ -15,6 +15,9 @@ const TravelCarousel = ({ data }) => {
         excludes: []
     })
 
+    const [showModal, setShowModal] = useState(false);
+    const [contact, setContact] = useState(false);
+
     useEffect(() => {
         setEventData(data)
     }, [data])
@@ -27,8 +30,12 @@ const TravelCarousel = ({ data }) => {
 
         emailjs.sendForm('service_ubwxr4w', 'template_qaliqh1', form.current, 'lLqlA6wimmnJyjy2c')
             .then((result) => {
+
+                alert("Query Sent")
+                setContact(false)
                 console.log(result.text);
             }, (error) => {
+                alert("Cannot send query. Try again later")
                 console.log(error.text);
             });
     };
@@ -46,8 +53,7 @@ const TravelCarousel = ({ data }) => {
         maxHeight: '600px'
     };
 
-    const [showModal, setShowModal] = useState(false);
-    const [contact, setContact] = useState(false);
+   
 
     const handleModalShow = (item) => {
         setDetails(item)
