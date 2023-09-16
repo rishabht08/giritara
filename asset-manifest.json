@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/giritara/static/css/main.43aba0db.css",
-    "main.js": "/giritara/static/js/main.d91c9c82.js",
+    "main.js": "/giritara/static/js/main.94584118.js",
     "static/js/787.8a220983.chunk.js": "/giritara/static/js/787.8a220983.chunk.js",
     "index.html": "/giritara/index.html",
     "main.43aba0db.css.map": "/giritara/static/css/main.43aba0db.css.map",
-    "main.d91c9c82.js.map": "/giritara/static/js/main.d91c9c82.js.map",
+    "main.94584118.js.map": "/giritara/static/js/main.94584118.js.map",
     "787.8a220983.chunk.js.map": "/giritara/static/js/787.8a220983.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.43aba0db.css",
-    "static/js/main.d91c9c82.js"
+    "static/js/main.94584118.js"
   ]
 }
