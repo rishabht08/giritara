@@ -1,7 +1,9 @@
 // src/Carousel.js
-import React, { useState, useEffect } from 'react';
-import { Carousel, Button, Modal, Image, Col, Row, ListGroup, Tabs, Tab } from 'react-bootstrap';
+import React, { useState, useEffect, useRef } from 'react';
+import { Carousel, Button, Modal, Row, Table, Tabs, Tab, Form, Container } from 'react-bootstrap';
 import ModalComponent from "./components/Modal-components"
+import { BsFacebook , BsInstagram  , BsWhatsapp} from 'react-icons/bs';
+import emailjs from '@emailjs/browser';
 
 const TravelCarousel = ({ data }) => {
 
@@ -16,6 +18,20 @@ const TravelCarousel = ({ data }) => {
     useEffect(() => {
         setEventData(data)
     }, [data])
+
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+
+        emailjs.sendForm('service_ubwxr4w', 'template_qaliqh1', form.current, 'lLqlA6wimmnJyjy2c')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+    };
 
 
     const carouselStyle = {
@@ -96,7 +112,7 @@ const TravelCarousel = ({ data }) => {
                 </Modal.Footer>
             </Modal>
 
-            <Modal  aria-labelledby="contained-modal-title-vcenter"  size="lg" show={contact} onHide={() => setContact(false)}>
+            <Modal aria-labelledby="contained-modal-title-vcenter" size="lg" show={contact} onHide={() => setContact(false)}>
                 <Modal.Header closeButton>
                     <Modal.Title>Contact Us</Modal.Title>
                 </Modal.Header>
@@ -108,13 +124,73 @@ const TravelCarousel = ({ data }) => {
                         fill
                     >
                         <Tab eventKey="phone" title="Phone Number(s)">
-                            Tab content for Home
+                            <Table hover size="sm">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Contact</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Sangmesh</td>
+                                        <td>Tokare</td>
+                                        <td>+91 8855087174</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Kunal</td>
+                                        <td>Pawar</td>
+                                        <td>+91 7045310385</td>
+                                    </tr>
+                                </tbody>
+                            </Table>
                         </Tab>
                         <Tab eventKey="email" title="Email">
-                            Tab content for Profile
+                            <Form ref={form} onSubmit={sendEmail}>
+                                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                                    <Form.Label>Event</Form.Label>
+                                    <Form.Control name='event_name' value={details.eventName} placeholder={details.eventName} />
+                                </Form.Group>
+                                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                                    <Form.Label>Your Name</Form.Label>
+                                    <Form.Control name='user_name' type="text" placeholder="Name" />
+                                </Form.Group>
+                                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                                    <Form.Label>Your Email address</Form.Label>
+                                    <Form.Control name='user_email' type="email" placeholder="name@example.com" />
+                                </Form.Group>
+                                <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
+                                    <Form.Label>Your Phone Number</Form.Label>
+                                    <Form.Control name='user_phone' type="number" placeholder="9876543219" />
+                                </Form.Group>
+                                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                                    <Form.Label>Booking Query</Form.Label>
+                                    <Form.Control as="textarea" rows={3} name='user_message' />
+                                </Form.Group>
+                                <Button variant="primary" type="submit">
+                                    Send
+                                </Button>
+                            </Form>
                         </Tab>
                         <Tab eventKey="social" title="Social Media">
-                            Tab content for Loooonger Tab
+                            <Container style={{textAlign:'center'}}>
+                                <a href='https://www.facebook.com/sangmesh.tokare.1' className='me-4 text-reset' target="_blank">
+                                    <BsFacebook />
+                                </a>
+
+                                <a href='https://www.instagram.com/giri_tara19/' className='me-4 text-reset' target="_blank">
+                                    <BsInstagram />
+                                </a>
+
+                                <a href='https://chat.whatsapp.com/ILG4PcGxk4b4DpOljhI77q' className='me-4 text-reset' target="_blank">
+                                    <BsWhatsapp />
+                                </a>
+
+                            </Container>
                         </Tab>
                     </Tabs>
 

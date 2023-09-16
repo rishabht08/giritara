@@ -1,32 +1,10 @@
-// src/Footer.js
-// import React from 'react';
 
-// const Footer = () => {
-//   const footerStyle = {
-//     position: 'relative',
-//     bottom: 0,
-//     left: 0,
-//     right: 0,
-//     backgroundColor: 'rgba(0, 0, 0, 0.8)', // You can adjust the background color
-//     color: 'white', // You can adjust the text color
-//     padding: '10px',
-//     textAlign: 'center',
-//   };
 
-//   return (
-//     <footer style={footerStyle}>
-//       &copy; {new Date().getFullYear()} Travel Website
-//     </footer>
-//   );
-// };
-
-// export default Footer;
-
-import { BsFacebook , BsInstagram  , BsTwitter , BsGoogle} from 'react-icons/bs';
+import { BsFacebook, BsInstagram, BsWhatsapp} from 'react-icons/bs';
 
 
 import React from 'react';
-import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
+import { MDBFooter } from 'mdb-react-ui-kit';
 
 export default function App() {
     return (
@@ -37,21 +15,18 @@ export default function App() {
                 </div>
 
                 <div>
-                    <a href='' className='me-4 text-reset'>
-                        {/* <MDBIcon fab icon="facebook-square" /> */}
-                        <BsFacebook/>
+                    <a href='https://www.facebook.com/sangmesh.tokare.1' className='me-4 text-reset' target="_blank">
+                        <BsFacebook />
                     </a>
-                  
-                    <a href='' className='me-4 text-reset'>
-                        <BsInstagram/>
+
+                    <a href='https://www.instagram.com/giri_tara19/' className='me-4 text-reset' target="_blank">
+                        <BsInstagram />
                     </a>
-                    <a href='' className='me-4 text-reset'>
-                        <BsTwitter/>
+
+                    <a href='https://chat.whatsapp.com/ILG4PcGxk4b4DpOljhI77q' className='me-4 text-reset' target="_blank">
+                        <BsWhatsapp />
                     </a>
-                    <a href='' className='me-4 text-reset'>
-                        <BsGoogle/>
-                    </a>
-                   
+
                 </div>
             </section>
 
