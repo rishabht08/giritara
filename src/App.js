@@ -48,7 +48,8 @@ function App() {
           <img
             alt=""
             // src="https://www.strunkmedia.com/wp-content/uploads/2018/05/bigstock-Print-163213010.png"
-            src = '/logo.png'
+            // src = '/logo.png'
+            src='https://firebasestorage.googleapis.com/v0/b/giritara-admin-web.appspot.com/o/Imgs%2Flogo.png?alt=media&token=cfacc639-c297-433a-80b5-3b63796e2d59'
             width="30"
             height="30"
             style={{ marginLeft: '20px' }}
