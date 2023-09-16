@@ -15,7 +15,7 @@ export default function App() {
                 </div>
 
                 <div>
-                    <a href='https://www.facebook.com/sangmesh.tokare.1' className='me-4 text-reset' target="_blank">
+                    <a href='https://www.facebook.com/groups/962019080532519/user/100064128397968/' className='me-4 text-reset' target="_blank">
                         <BsFacebook />
                     </a>
 
